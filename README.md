@@ -1,5 +1,5 @@
 # XFCE4-taskbar-plugin
-Modified plugin with larger icons. The code is definitely not perfect, but it works for me.
+Modified plugin with larger icons (inspired by https://forum.xfce.org/viewtopic.php?id=9434). The code is definitely not perfect, but it works for me.
 
 
 Clone repository
