@@ -6,7 +6,7 @@ Clone repository
 
 make
 
-make install
+make install (If error directory doesn't exist -> make the directory yourself and run again)
 
 xfce4-panel -r
 
