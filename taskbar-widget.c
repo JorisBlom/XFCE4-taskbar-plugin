@@ -1177,6 +1177,109 @@ static void xfce_taskbar_window_added (WnckScreen *screen, WnckWindow *window, X
         {
             icon_name = "pragha";
         }
+        else if (strstr(icon_name, "light locker settings") != NULL)
+        {
+            icon_name = "preferences-desktop-screensaver";
+        }
+        else if (strstr(icon_name, "edit launcher") != NULL)
+        {
+            icon_name = "application-default-icon";
+        }
+        else if (strstr(icon_name, "dconf editor") != NULL)
+        {
+            icon_name = "dconf-editor";
+        }
+        else if (strstr(icon_name, "document viewer") != NULL)
+        {
+            icon_name = "accesories-document-viewer";
+        }
+        else if (strstr(icon_name, "window manager tweaks") != NULL)
+        {
+            icon_name = "wmtweaks";
+        }
+        else if (strstr(icon_name, "window manager") != NULL)
+        {
+            icon_name = "gnome-window-manager";
+        }
+        else if (strstr(icon_name, "mime type editor") != NULL)
+        {
+            icon_name = "application-executable";
+        }
+        else if (strstr(icon_name, "mouse and touchpad") != NULL)
+        {
+            icon_name = "preferences-desktop-peripherals";
+        }
+        else if (strstr(icon_name, "keyboard") != NULL)
+        {
+            icon_name = "preferences-desktop-keyboard";
+        }
+        else if (strstr(icon_name, "notifications") != NULL)
+        {
+            icon_name = "preferences-system-notifications";
+        }
+        else if (strstr(icon_name, "display") != NULL)
+        {
+            icon_name = "preferences-desktop-display";
+        }
+        else if (strstr(icon_name, "desktop") != NULL)
+        {
+            icon_name = "preferences-desktop-wallpaper";
+        }
+        else if (strstr(icon_name, "archive manager") != NULL)
+        {
+            icon_name = "file-roller";
+        }
+        else if ((strstr(icon_name, "settings") != NULL) || strstr(icon_name, "settings editor") != NULL)
+        {
+            icon_name = "preferences-system";
+        }
+        else if (strstr(icon_name, "preferred applications") != NULL)
+        {
+            icon_name = "preferences-desktop-default-applications";
+        }
+        else if (strstr(icon_name, "volume control") != NULL)
+        {
+            icon_name = "multimedia-volume-control";
+        }
+        else if (strstr(icon_name, "qt5 configuration tool") != NULL)
+        {
+            icon_name = "theme config";
+        }
+        else if (strstr(icon_name, "v4l2 test bench") != NULL)
+        {
+            icon_name = "qv4l2";
+        }
+        else if (strstr(icon_name, "removable drives and media") != NULL)
+        {
+            icon_name = "drive-harddisk-usb";
+        }
+        else if (strstr(icon_name, "workspaces") != NULL)
+        {
+            icon_name = "workspace-switcher-right-top";
+        }
+        else if (strstr(icon_name, "task manager") != NULL)
+        {
+            icon_name = "utilities-system-monitor";
+        }
+        else if (strstr(icon_name, "accessibility") != NULL)
+        {
+            icon_name = "preferences-desktop-accessibility";
+        }
+        else if (strstr(icon_name, "about the xfce desktop environment") != NULL)
+        {
+            icon_name = "desktop-environment-xfce";
+        }
+        else if (strstr(icon_name, "network connections") != NULL)
+        {
+            icon_name = "network-workgroup";
+        }
+        else if (strstr(icon_name, "screenshot") != NULL)
+        {
+            icon_name = "accessories-screenshot";
+        }
+
+
+
 
         /* This is defined as a global variable at the top of the file */
         if (!gtkIconTheme)
