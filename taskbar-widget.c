@@ -1270,6 +1270,10 @@ static void xfce_taskbar_window_added (WnckScreen *screen, WnckWindow *window, X
         {
             icon_name = "accessories-screenshot";
         }
+        else if (strstr(icon_name, "xfce4-session-settings") != NULL)
+        {
+            icon_name = "session-properties";
+        }
         else if (strstr(icon_name, "settings") != NULL)
         {
             icon_name = "preferences-system";
