@@ -1238,13 +1238,9 @@ static void xfce_taskbar_window_added (WnckScreen *screen, WnckWindow *window, X
         {
             icon_name = "multimedia-volume-control";
         }
-        else if (strstr(icon_name, "qt client leader window") != NULL)
+        else if ((strstr(icon_name, "qt client leader window") != NULL) || (strstr(icon_name, "xfce4-appearance-settings") != NULL))
         {
             icon_name = "theme-config";
-        }
-        else if (strstr(icon_name, "qt5ct") != NULL)
-        {
-            icon_name = "qv4l2";
         }
         else if (strstr(icon_name, "thunar volume manager settings") != NULL)
         {
