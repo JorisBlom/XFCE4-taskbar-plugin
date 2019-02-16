@@ -1173,6 +1173,10 @@ static void xfce_taskbar_window_added (WnckScreen *screen, WnckWindow *window, X
         {
             icon_name = "visualstudiocode";
         }
+        else if (strstr(icon_name, "pragha music player") != NULL)
+        {
+            icon_name = "pragha";
+        }
 
         /* This is defined as a global variable at the top of the file */
         if (!gtkIconTheme)
