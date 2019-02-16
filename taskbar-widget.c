@@ -1274,11 +1274,10 @@ static void xfce_taskbar_window_added (WnckScreen *screen, WnckWindow *window, X
         {
             icon_name = "session-properties";
         }
-        else if (strstr(icon_name, "settings") != NULL)
+        else if ((strstr(icon_name, "xfce4-settings-manager") != NULL)||(strstr(icon_name, "xfce4-settings-editor")))
         {
             icon_name = "preferences-system";
         }
-
 
 
 
