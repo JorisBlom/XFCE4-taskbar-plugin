@@ -1123,6 +1123,7 @@ static void xfce_taskbar_window_added (WnckScreen *screen, WnckWindow *window, X
         {
             icon_name[i] = tolower(icon_name[i]);
         }
+        printf(icon_name);
 
         /* manual hacks for commonly used programs that don't automatically work*/
         if (strstr(icon_name, "google chrome") != NULL)
@@ -1177,11 +1178,11 @@ static void xfce_taskbar_window_added (WnckScreen *screen, WnckWindow *window, X
         {
             icon_name = "pragha";
         }
-        else if (strstr(icon_name, "light locker settings") != NULL)
+        else if (strstr(icon_name, "light-locker-settings.py") != NULL)
         {
             icon_name = "preferences-desktop-screensaver";
         }
-        else if (strstr(icon_name, "edit launcher") != NULL)
+        else if (strstr(icon_name, "exo-desktop-item-edit") != NULL)
         {
             icon_name = "application-default-icon";
         }
@@ -1191,37 +1192,37 @@ static void xfce_taskbar_window_added (WnckScreen *screen, WnckWindow *window, X
         }
         else if (strstr(icon_name, "document viewer") != NULL)
         {
-            icon_name = "accesories-document-viewer";
+            icon_name = "accessories-document-viewer";
         }
-        else if (strstr(icon_name, "window manager tweaks") != NULL)
+        else if (strstr(icon_name, "xfwm4-tweaks-settings") != NULL)
         {
             icon_name = "wmtweaks";
         }
-        else if (strstr(icon_name, "window manager") != NULL)
+        else if (strstr(icon_name, "xfwm4-settings") != NULL)
         {
             icon_name = "gnome-window-manager";
         }
-        else if (strstr(icon_name, "mime type editor") != NULL)
+        else if (strstr(icon_name, "xfce4-mime-settings") != NULL)
         {
             icon_name = "application-executable";
         }
-        else if (strstr(icon_name, "mouse and touchpad") != NULL)
+        else if (strstr(icon_name, "xfce4-mouse-settings") != NULL)
         {
             icon_name = "preferences-desktop-peripherals";
         }
-        else if (strstr(icon_name, "keyboard") != NULL)
+        else if (strstr(icon_name, "xfce4-keyboard-settings") != NULL)
         {
             icon_name = "preferences-desktop-keyboard";
         }
-        else if (strstr(icon_name, "notifications") != NULL)
+        else if (strstr(icon_name, "xfce4-notifyd-config") != NULL)
         {
             icon_name = "preferences-system-notifications";
         }
-        else if (strstr(icon_name, "display") != NULL)
+        else if (strstr(icon_name, "xfce4-display-settings") != NULL)
         {
             icon_name = "preferences-desktop-display";
         }
-        else if (strstr(icon_name, "desktop") != NULL)
+        else if (strstr(icon_name, "xfdesktop-settings") != NULL)
         {
             icon_name = "preferences-desktop-wallpaper";
         }
@@ -1229,31 +1230,27 @@ static void xfce_taskbar_window_added (WnckScreen *screen, WnckWindow *window, X
         {
             icon_name = "file-roller";
         }
-        else if ((strstr(icon_name, "settings") != NULL) || strstr(icon_name, "settings editor") != NULL)
-        {
-            icon_name = "preferences-system";
-        }
-        else if (strstr(icon_name, "preferred applications") != NULL)
+        else if (strstr(icon_name, "exo-helper-1") != NULL)
         {
             icon_name = "preferences-desktop-default-applications";
         }
-        else if (strstr(icon_name, "volume control") != NULL)
+        else if (strstr(icon_name, "pavucontrol") != NULL)
         {
             icon_name = "multimedia-volume-control";
         }
-        else if (strstr(icon_name, "qt5 configuration tool") != NULL)
+        else if (strstr(icon_name, "qt client leader window") != NULL)
         {
-            icon_name = "theme config";
+            icon_name = "theme-config";
         }
-        else if (strstr(icon_name, "v4l2 test bench") != NULL)
+        else if (strstr(icon_name, "qt5ct") != NULL)
         {
             icon_name = "qv4l2";
         }
-        else if (strstr(icon_name, "removable drives and media") != NULL)
+        else if (strstr(icon_name, "thunar volume manager settings") != NULL)
         {
             icon_name = "drive-harddisk-usb";
         }
-        else if (strstr(icon_name, "workspaces") != NULL)
+        else if (strstr(icon_name, "xfwm4-workspace-settings") != NULL)
         {
             icon_name = "workspace-switcher-right-top";
         }
@@ -1265,17 +1262,21 @@ static void xfce_taskbar_window_added (WnckScreen *screen, WnckWindow *window, X
         {
             icon_name = "preferences-desktop-accessibility";
         }
-        else if (strstr(icon_name, "about the xfce desktop environment") != NULL)
+        else if (strstr(icon_name, "xfce4-about") != NULL)
         {
             icon_name = "desktop-environment-xfce";
         }
-        else if (strstr(icon_name, "network connections") != NULL)
+        else if (strstr(icon_name, "nm-connection-editor") != NULL)
         {
             icon_name = "network-workgroup";
         }
-        else if (strstr(icon_name, "screenshot") != NULL)
+        else if (strstr(icon_name, "xfce4-screenshooter") != NULL)
         {
             icon_name = "accessories-screenshot";
+        }
+        else if (strstr(icon_name, "settings") != NULL)
+        {
+            icon_name = "preferences-system";
         }
 
 
@@ -1293,7 +1294,12 @@ static void xfce_taskbar_window_added (WnckScreen *screen, WnckWindow *window, X
 
         /*Fall back to the old way of doing things when my new way fails*/
         if(gError!=NULL)
-            group -> pixbuf = wnck_window_get_icon (window);
+        {
+            gError = NULL;
+            group -> pixbuf = gtk_icon_theme_load_icon (gtkIconTheme, "chmsee-icon", 128, 0, &gError);
+            if(gError!=NULL)
+                group -> pixbuf = wnck_window_get_icon (window);
+        }
         //asdfasdf
         g_object_ref(group -> pixbuf);
         
